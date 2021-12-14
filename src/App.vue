@@ -1,32 +1,49 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <el-container>
+      <el-header>
+        <Nav />
+      </el-header>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
   </div>
 </template>
 
+<script>
+import "./until/flexible";
+import Nav from "@/components/Nav.vue";
+
+export default {
+  components: {
+    Nav,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html {
+  background: #060e33;
 }
 
-#nav {
-  padding: 30px;
+.el-header {
+  padding: 0px 0.625rem !important;
+}
+.el-main {
+  padding-left: 0.625rem !important;
+  margin-left: 0px !important;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.el-step__title {
+  font-size: 0.625rem !important;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.el-step__title.is-process {
+  color: #67c23a !important;
+}
+
+.el-step__head.is-process {
+  color: #57c23a !important;
 }
 </style>
